@@ -1,4 +1,3 @@
-
 b_num =int(input())
 b_work = str(input())
 b_list = list(b_work.split(" "))
