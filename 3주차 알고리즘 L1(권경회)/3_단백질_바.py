@@ -1,19 +1,19 @@
 portein = int(input()) 
 
-peanut_protein = 0 #땅콩
-chicken_protein = 0 #닭
-pure_protein = 0 #순수
+peanut = 0 #땅콩
+chicken = 0 #닭
+pure = 0 #순수
 
-pure_protein =  portein // 250 
-remain_protein = portein - (pure_protein * 250)
+pure =  portein // 250 
+remain = portein - (pure * 250)
 
-chicken_protein = remain_protein // 40
-remain_protein = remain_protein - (chicken_protein * 40)
+chicken = remain // 40
+remain = remain - (chicken * 40)
 
-peanut_protein = remain_protein // 10
-remain_protein = remain_protein - (peanut_protein * 10)
+peanut = remain // 10
+remain = remain - (peanut * 10)
 
-if remain_protein != 0:
+if remain != 0:
     print("-1")
 else:
-    print(peanut_protein, chicken_protein, pure_protein)
+    print(peanut, chicken, pure)
