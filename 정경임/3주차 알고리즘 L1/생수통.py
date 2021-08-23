@@ -1,3 +1,16 @@
+bottle = [int(input()) for i in range(3)]
+top = [int(input()) for i in range(2)]
+
+total = 600
+
+for i in bottle:
+    for j in top:
+        if i + j < total:
+            total = i + j + 10
+            
+print(total)
+
+
 '''
 엘리스 샘물은 물을 담아 판매하기 위해 생수통을 외부 업체로부터 구매하려고 합니다. 구매하는 방법은 다음과 같습니다.
 
@@ -13,15 +26,3 @@
 [출력]
 첫 번째 줄에 엘리스 샘물이 구매할 생수통 한 개 가격의 최솟값을 출력합니다.
 '''
-
-bottle = [int(input()) for i in range(3)]
-top = [int(input()) for i in range(2)]
-
-total = 600
-
-for i in bottle:
-    for j in top:
-        if i + j < total:
-            total = i + j + 10
-            
-print(total)
