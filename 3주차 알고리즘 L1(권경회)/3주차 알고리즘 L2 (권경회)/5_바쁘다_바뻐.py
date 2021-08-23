@@ -1,11 +1,9 @@
-n, k = map(int, input().split())
+A_B = int(input())
+B_C = int(input())
+C_D = int(input())
+D_A = int(input())
 
-sum_list = []
+total_s = A_B + B_C + C_D + D_A
 
-for i in range(1, n+1):
-    i = i ** k
-    sum_list.append(i)
-
-result = sum(sum_list) % 1000000009
-
-print(result)
+print(total_s // 60)
+print(total_s % 60)
