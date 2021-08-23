@@ -1,12 +1,10 @@
-#너무 어려워서 권경회님 코드 복붙했습니다 ㅜㅜ
-#봐도 모르겠어요 ㅋㅋㅋㅋㅋ ㅜㅜ
 portein = int(input())
 
 peanut_protein = 0  # 땅콩
 chicken_protein = 0  # 닭
 pure_protein = 0  # 순수
 
-pure_protein = portein // 250
+pure_protein = portein // 250 #//연산자는 나누고 몫만 반환함..
 remain_portein = portein - (pure_protein * 250)
 
 chicken_protein = remain_portein // 40
