@@ -1,44 +1,23 @@
 a, b, c = map(int, input().split())
 
-# b를 2진수로 변환 후 리스트에 담고 뒤집기
-B = bin(b)
+result = 1
 
-i_list = []
-for i in B[2:]:
-    i_list.append(i)
+# 지수가 1이 될 때 무조건 결과값에 곱하게 되어있으므로 0이 될 때까지 계속한다.
+while b:
+    # 홀수일 경우를 따로 빼서 결과값에 밑을 한번 곱해준다.
+    if int(b) & 1:
+        result = (result * a) % c
 
-r_i_list = i_list[::-1]
+    # 짝수/홀수 상관없이 밑을 제곱한다. 그리고 지수를 반으로 쪼갠다.
+    a = (a ** 2) % c
+    b /= 2
 
-# 2진수로 바꾼 b를 2의 거듭제곱으로 변환 후 리스트에 넣기
-s_list = []
 
-for s in range(len(r_i_list)):
-    if i == 0:
-        x = 1 if r_i_list[int(s)] == "1" else 0
-        s_list.append(x)
-    else:
-        if r_i_list[s] == "1":
-            t = 2 ** s
-            s_list.append(t)
-
-# 2 ≤ B 인 거듭제곱의 c로 나눈 나머지 구함.
-sq_list = []
-
-for z in range(len(s_list)):
-    sq = a ** int(s_list[z]) % c
-    sq_list.append(sq)
-
-# 나머지들을 곱한 후 c로 나눈 나머지를 구함.
-po = 1
-
-for k in sq_list:
-    po *= k
-
-print(po % c)
-
+print(result)
 
 '''
+https://sexycoder.tistory.com/68 
 
-https://ko.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/fast-modular-exponentiation 방법 -> 시간 초과
+거듭제곱의 분할 정복
 
 '''
