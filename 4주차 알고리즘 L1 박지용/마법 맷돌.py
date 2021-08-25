@@ -1,3 +1,4 @@
+//60점만 나와요 ㅠㅠ
 def check(s, t):
     if len(s) > len(t) :
         for i in range(len(t)):
