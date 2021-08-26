@@ -1,19 +1,58 @@
-g_cnt = int(input())
+# 얻고 싶은 경품 개수(=약수 개수) 입력
+g_cnt = int(input())  
 
-stage = 1
+stage = 1  # 게임 스테이지
 
 while True:
-    score = stage * (stage + 1) // 2
-    cnt = 0
+    score = stage * (stage + 1) // 2   # 점수 구하는 공식
     
-    for n in range(1, score+1):
-        if score % n == 0:
-            cnt += 1
-            
-    if cnt > g_cnt:
+    cnt_1 = 0   # 약수 개수
+    cnt_2 = 0
+    
+    ##############################
+    #### 1. stage가 홀수일 때 ####
+    ##############################
+    # stage의 약수 개수 * (stage+1)/2의 약수 개수 = score의 약수 개수
+    
+    if stage % 2 != 0:
+    
+        # stage 약수 개수 구하기
+        for n in range(1, stage+1):
+            if stage % n == 0:
+                cnt_1 += 1
+                
+        # (stage+1)/2의 약수 개수 구하기
+        s = (stage + 1) // 2
+        for n in range(1, s+1):
+            if s % n == 0:
+                cnt_2 += 1
+                
+    
+    ##############################
+    #### 2. stage가 짝수일 때 ####
+    ##############################
+    # stage/2의 약수 개수 * stage+1의 약수 개수 = score의 약수 개수
+    
+    if stage % 2 == 0:
+    
+        # stage/2 약수 개수 구하기
+        s = stage // 2
+        for n in range(1, s+1):
+            if s % n == 0:  # 나누어 떨어지면(= 약수라면)
+                cnt_1 += 1  # 약수 개수 1개 증가
+        
+        # stage+1 약수 개수 구하기
+        s = stage + 1
+        for n in range(1, s+1):
+            if s % n == 0:
+                cnt_2 += 1
+        
+    score_cnt = cnt_1 * cnt_2
+    
+    if score_cnt > g_cnt:
         print(score)
         break
-            
+        
     stage += 1
 
 
