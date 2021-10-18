@@ -2,17 +2,14 @@ n, t = map(int, input().split())
 
 takes_time = input().split()
 
-time_list = []
+res = []
 
-for i in takes_time:
-    t = t - int(i)
-    time_list.append(t)
+for i in range(len(takes_time)):
+    t -= int(takes_time[i])
+    if t >= 0:
+        res.append(t)
 
-for i in range(len(time_list)):
-    if time_list[-1] > 0:
-        print(len(time_list))
-        break
-
-    if time_list[i] <= 0:
-        print(len(time_list[:i]))
-        break
+if len(res) >= len(takes_time):
+    print(len(takes_time))
+else:
+    print(len(res))
