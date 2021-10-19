@@ -10,7 +10,7 @@ if sum(queue)<T:
 else:
     while T>0:
         T -= queue[i]
-
+        i += 1
         if T < 0:
             break
         else:
