@@ -9,7 +9,4 @@ for i in range(len(takes_time)):
     if t >= 0:
         res.append(t)
 
-if len(res) >= len(takes_time):
-    print(len(takes_time))
-else:
-    print(len(res))
+print(len(res))
