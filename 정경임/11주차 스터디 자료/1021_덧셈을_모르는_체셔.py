@@ -9,13 +9,12 @@ if len(num_str) == 2:
 
 # 입력받은 자연수 A, B가 둘 중 하나라도 두 자리 숫자라면
 else:
-    # A가 10인 경우
+    # A가 10인 경우 int(num_str[0:2]) (B는 한 자리든 두 자리든 상관 없음)
     if num_str[1] == '0':
-        ten = int(num_str[0:2])
-        result = ten + int(num_str[2:])
+        result = 10 + int(num_str[2:])
+        
     # B가 10인 경우
     else:
-        ten = int(num_str[1:])
-        result = int(num_str[0]) + ten
+        result = int(num_str[0]) + 10
     
 print(result)
